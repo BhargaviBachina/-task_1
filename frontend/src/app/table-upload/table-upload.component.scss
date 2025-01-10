@@ -1,0 +1,135 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+  }
+  
+  .logout-button {
+    background-color: #ff4c4c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .logout-button:hover {
+    background-color: #e04343;
+  }
+  
+  .table-upload {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .section-title {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #2c3e50;
+  }
+  
+  .upload-form, .search-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .upload-label, .search-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #34495e;
+  }
+  
+  .file-input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .upload-btn, .search-btn, .pagination-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .upload-btn:disabled, .search-btn:disabled, .pagination-btn:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  
+  .upload-btn:hover, .search-btn:hover, .pagination-btn:hover {
+    background-color: #2980b9;
+  }
+  
+  .success-message {
+    color: #27ae60;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  .no-records {
+    color: #e74c3c;
+    text-align: center;
+  }
+  
+  .records-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .records-table th, .records-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .records-table th {
+    background-color: #ecf0f1;
+    font-weight: bold;
+  }
+  
+  .pagination-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .pagination-info {
+    font-size: 14px;
+    color: #7f8c8d;
+  }
+  
+  .pagination-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .pagination-btn:hover {
+    background-color: #3498db;
+  }
+  

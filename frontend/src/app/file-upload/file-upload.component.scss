@@ -1,0 +1,133 @@
+.file-upload-container {
+  padding: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.upload-label {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+  color: #333;
+}
+
+.upload-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.file-input {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  flex: 1;
+  background-color: #fff;
+}
+
+.upload-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.upload-button:disabled {
+  background-color: #d6d6d6;
+}
+
+.upload-button:hover:enabled {
+  background-color: #0056b3;
+}
+
+.file-table {
+  margin-top: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-bordered {
+  border: 1px solid #ddd;
+  margin-top: 20px;
+}
+
+.table th,
+.table td {
+  padding: 12px 15px;
+  text-align: left;
+  font-size: 16px;
+}
+
+.table th {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+.download-link {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.download-link:hover {
+  text-decoration: underline;
+}
+
+.delete-button {
+  background-color: #f44336;
+  color: white;
+  padding: 8px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+  background-color: #e57373;
+}
+
+.no-files-message {
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+  margin-top: 20px;
+}
+
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+}

@@ -1,0 +1,32 @@
+<div class="dashboard">
+  <h2 class="dashboard-title">Dashboard</h2>
+
+  <!-- Profile Section -->
+  <div class="header">
+    <div class="profile-section">
+      <i class="fa fa-user profile-icon"></i>
+      <span>{{ username ? 'Hello ' + username : 'Welcome!' }}</span>
+    </div>
+    <button class="logout-btn" (click)="logout()">Logout</button>
+  </div>
+
+  <!-- Success Message -->
+  <div *ngIf="successMessage" class="message success-message">
+    {{ successMessage }}
+  </div>
+
+  <!-- Error Message -->
+  <div *ngIf="error" class="message error-message">
+    {{ error }}
+  </div>
+
+  <!-- Welcome Section -->
+  <div class="welcome-section">
+    <h3>Welcome to Your Dashboard!</h3>
+    <p>Click below to upload a CSV file and view the records.</p>
+    <div class="button-group">
+      <a [routerLink]="['/table-upload']" class="go-to-upload">Table Upload</a>
+      <a [routerLink]="'/file-upload'" class="go-to-upload">Go to File Upload</a>
+    </div>
+  </div>
+</div>

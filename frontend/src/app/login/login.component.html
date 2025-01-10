@@ -1,0 +1,56 @@
+<div class="login-container">
+  <div class="login-card">
+    <h2 class="login-title">Login</h2>
+
+    <!-- Login Form -->
+    <form [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()" class="login-form">
+      <!-- Email Input -->
+      <div class="form-group">
+        <label for="email" class="form-label">Email Address</label>
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          class="form-control"
+          placeholder="Enter your email"
+        />
+        <div *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched" class="error-message">
+          Please enter a valid email.
+        </div>
+      </div>
+
+      <!-- Password Input -->
+      <div class="form-group">
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          id="password"
+          formControlName="password"
+          class="form-control"
+          placeholder="Enter your password"
+        />
+        <div *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched" class="error-message">
+          Password is required.
+        </div>
+      </div>
+
+      <!-- Error Message -->
+      <div *ngIf="errorMessage" class="alert alert-danger">
+        {{ errorMessage }}
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" [disabled]="isLoading" class="btn btn-primary">
+        <span *ngIf="isLoading">Loading...</span>
+        <span *ngIf="!isLoading">Login</span>
+      </button>
+
+      <!-- Extra Links -->
+      <div class="extra-links">
+        <a routerLink="/forgot-password" class="forgot-password-link">Forgot Password?</a>
+        <span class="separator"> | </span>
+        <a routerLink="/register" class="register-link">Create Account</a>
+      </div>
+    </form>
+  </div>
+</div>

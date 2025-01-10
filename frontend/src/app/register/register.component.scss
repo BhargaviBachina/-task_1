@@ -1,0 +1,161 @@
+/* General Styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 0;
+}
+
+/* Form Container */
+.register-form {
+  max-width: 450px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styling */
+.form-header {
+  margin-bottom: 30px;
+}
+
+.form-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.form-header p {
+  font-size: 14px;
+  color: #777;
+  margin-top: 0;
+}
+
+/* Form Row */
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.form-group.col {
+  flex: 1;
+}
+
+.form-group label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+/* Input Fields Styling */
+.form-control {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Error Messages Styling */
+.error-message {
+  font-size: 12px;
+  color: #dc3545;
+  margin-top: 5px;
+}
+
+/* Buttons Styling */
+button {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+/* Success and Error Messages */
+.alert {
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+
+/* Spinner */
+.spinner-container {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.spinner-border {
+  width: 20px;
+  height: 20px;
+  border-width: 3px;
+  margin-right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .register-form {
+    padding: 20px;
+    width: 90%;
+  }
+
+  .form-header h2 {
+    font-size: 28px;
+  }
+
+  .form-control {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+
+  /* Stack the form fields in smaller screens */
+  .form-row {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,50 @@
+<div class="file-upload-container">
+    <!-- Success and Error Messages -->
+    <div *ngIf="error" class="alert alert-danger">
+      {{ error }}
+    </div>
+  
+    <div *ngIf="successMessage" class="alert alert-success">
+      {{ successMessage }}
+    </div>
+  
+    <!-- File Upload Section -->
+    <div class="upload-section">
+      <label for="fileInput" class="upload-label">Upload a File</label>
+      <div class="upload-form">
+        <input type="file" id="fileInput" (change)="onFileSelect($event)" class="file-input" />
+        <button (click)="uploadFile()" [disabled]="!fileToUpload" class="upload-button">Upload</button>
+      </div>
+    </div>
+  
+    <!-- Table to display uploaded files -->
+    <div *ngIf="uploadedFiles.length > 0" class="file-table">
+      <h3>Uploaded Files</h3>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>File Name</th>
+            <th>File URL</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let file of uploadedFiles">
+            <td>{{ file.file_name }}</td>
+            <td>
+              <a [href]="file.file_url" target="_blank" title="Click to download {{ file.file_name }}" class="download-link">Download</a>
+            </td>
+            <td>
+              <button (click)="deleteFile(file.id)" class="delete-button">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <!-- If no files have been uploaded yet -->
+    <div *ngIf="uploadedFiles.length === 0" class="no-files-message">
+      <p>No files uploaded yet.</p>
+    </div>
+  </div>
+  

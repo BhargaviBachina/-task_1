@@ -1,0 +1,107 @@
+<div class="container">
+    <!-- Logout Button -->
+    <button (click)="logout()" class="logout-button">Logout</button>
+  
+    <div class="table-upload">
+  
+      <!-- File Upload Section -->
+      <div class="upload-section">
+        <h3 class="section-title">Upload CSV File</h3>
+        <form [formGroup]="fileUploadForm" (ngSubmit)="uploadFile()" class="upload-form">
+          <div class="form-group">
+            <label for="csvFile" class="upload-label">Select CSV File</label>
+            <input 
+              id="csvFile" 
+              type="file" 
+              (change)="handleFileUpload($event)" 
+              formControlName="file" 
+              class="file-input" />
+          </div>
+          <button 
+            type="submit" 
+            class="upload-btn" 
+            [disabled]="!fileUploadForm.valid">
+            Upload File
+          </button>
+          <div *ngIf="successMessage" class="success-message">
+            {{ successMessage }}
+          </div>
+        </form>
+      </div>
+  
+      <!-- Search Section -->
+      <div class="search-container">
+        <h3 class="section-title">Search Records</h3>
+        <form (ngSubmit)="onSearchChange()" class="search-form">
+          <div class="form-group">
+            <label for="searchField" class="search-label">Select Field</label>
+            <select 
+              [(ngModel)]="searchField" 
+              name="searchField" 
+              id="searchField" 
+              class="form-control">
+              <option value="" disabled>Select a field</option>
+              <option *ngFor="let column of columns" [value]="column">{{ column }}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="searchValue" class="search-label">Search Value</label>
+            <input
+              type="text"
+              id="searchValue"
+              name="searchValue"
+              class="form-control"
+              [(ngModel)]="searchValue"
+              (input)="onSearchChange()"
+              placeholder="Enter search value" />
+          </div>
+          <button 
+            type="submit" 
+            class="search-btn" 
+            [disabled]="!searchValue">
+            Search
+          </button>
+        </form>
+      </div>
+  
+      <!-- Records Table -->
+      <h3 class="section-title">Records</h3>
+      <div *ngIf="records.length > 0" class="table-container">
+        <table class="records-table">
+          <thead>
+            <tr>
+              <th *ngFor="let column of columns">{{ column }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let record of records">
+              <td *ngFor="let column of columns">{{ record.data[column] }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+      <!-- Message if no records found -->
+      <div *ngIf="records.length === 0" class="no-records">
+        <p>No records found.</p>
+      </div>
+  
+      <!-- Pagination Controls -->
+      <div *ngIf="totalPages > 1" class="pagination-controls">
+        <button 
+          (click)="changePage(currentPage - 1)" 
+          [disabled]="currentPage === 1" 
+          class="pagination-btn">
+          Previous
+        </button>
+        <span class="pagination-info">Page {{ currentPage }} of {{ totalPages }}</span>
+        <button 
+          (click)="changePage(currentPage + 1)" 
+          [disabled]="currentPage === totalPages" 
+          class="pagination-btn">
+          Next
+        </button>
+      </div>
+    </div>
+  </div>
+  
